@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello Ankit Srivastava</h1>
+    <h1>H</h1>
     <TodoList />
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
 <style>
 
 body{
-  background-color: #761980;
+  background-color: rgb(66, 66, 66);
+  color: aliceblue;
 }
 </style>
