@@ -6,15 +6,20 @@
             </div>
         </div>
         <div class="row">
-            <p>Add create form</p>
+            <NewTodo
+                @on-addTodo="addTodo($event)"
+             />
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <u class="list-group">
                     <Todo v-for="(todo,index) in todos" 
                         :key="index" 
-                        :todo="todo.todoString"
+                        :todoString="todo.todoString"
                         :completed="todo.completed"
+                        @on-delete="deleteTodo(todo)"
+                        @on-toggle="toggleTodo(todo)"
+                        @on-edit="editTodo(todo,$event)"
                     />
                 </u>
             </div>
@@ -24,9 +29,11 @@
 
 <script>
 import Todo from "./Todo"
+import NewTodo from "./NewTodo"
 export default {
     components:{
-        Todo
+        Todo,
+        NewTodo
     },
     data(){
         return {
